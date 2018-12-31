@@ -1,7 +1,7 @@
 {
-  "name": "kline",
-  "version": "1.1.8",
-  "description": "本项目基于某K线插件做了一些封装和二次开发,使插件更加易用,方便后来的开发者.",
+  "name": "kline_ext",
+  "version": "1.0.0",
+  "description": "k-line",
   "main": "dist/kline.js",
   "directories": {
     "example": "examples"

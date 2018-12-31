@@ -2470,4 +2470,3 @@ export class CDynamicLinePlotter extends NamedObject {
     }
 
 }
-

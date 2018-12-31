@@ -12,7 +12,7 @@ import * as ranges from './ranges'
 
 export class Template {
 
-    static displayVolume = true;
+    //static displayVolume = false;
 
     static createCandlestickDataSource(dsAlias) {
         return new data_sources.MainDataSource(dsAlias);
@@ -27,8 +27,9 @@ export class Template {
     }
 
     static createTableComps(dsName) {
+        console.log(Kline.instance)
         this.createMainChartComps(dsName);
-        if (this.displayVolume) {
+        if (Kline.instance.displayVolume == true) {
             this.createIndicatorChartComps(dsName, "VOLUME");
         }
         this.createTimelineComps(dsName);
@@ -143,8 +144,8 @@ export class Template {
         let plotter;
         plotter = new plotters.BackgroundPlotter(dsName + ".main.background");
         mgr.setPlotter(plotter.getName(), plotter);
-        plotter = new plotters.CLiveOrderPlotter(dsName + ".main.main");
-        mgr.setPlotter(plotter.getName(), plotter);
+        //plotter = new plotters.CLiveOrderPlotter(dsName + ".main.main");
+        //mgr.setPlotter(plotter.getName(), plotter);
     }
 
     static createLiveTradeComps(dsName) {
@@ -152,8 +153,8 @@ export class Template {
         let plotter;
         plotter = new plotters.BackgroundPlotter(dsName + ".main.background");
         mgr.setPlotter(plotter.getName(), plotter);
-        plotter = new plotters.CLiveTradePlotter(dsName + ".main.main");
-        mgr.setPlotter(plotter.getName(), plotter);
+        //plotter = new plotters.CLiveTradePlotter(dsName + ".main.main");
+        //mgr.setPlotter(plotter.getName(), plotter);
     }
 
 }

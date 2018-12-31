@@ -40,6 +40,7 @@ export default class Kline {
         this.theme = "dark";
         this.ranges = ["1w", "1d", "1h", "30m", "15m", "5m", "1m", "line"];
         this.showTrade = true;
+        this.displayVolume = true;
         this.tradeWidth = 250;
         this.socketConnected = false;
         this.enableSockjs = true;
@@ -480,6 +481,7 @@ export default class Kline {
                     let r = e.target.getBoundingClientRect();
                     let x = e.clientX - r.left;
                     let y = e.clientY - r.top;
+                  
                     let mgr = ChartManager.instance;
                     if (Kline.instance.buttonDown === true) {
                         mgr.onMouseMove("frame0", x, y, true);
